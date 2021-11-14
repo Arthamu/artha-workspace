@@ -11,13 +11,19 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
+    "paths": {
+      "ngx-sheetsbyart": [
+        "dist/ngx-sheetsbyart/ngx-sheetsbyart",
+        "dist/ngx-sheetsbyart"
+      ]
+    },
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2017",
-    "module": "es2020",
+    "module": "esnext",
     "lib": [
       "es2020",
       "dom"
