@@ -3,9 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'lib-ngx-sheetsbyart',
   template: `
-    <p>
-      ngx-sheetsbyart works!
-    </p>
+    <lib-sheets-core [row]="10" [col]="50">
+    </lib-sheets-core>
   `,
   styles: [
   ]
