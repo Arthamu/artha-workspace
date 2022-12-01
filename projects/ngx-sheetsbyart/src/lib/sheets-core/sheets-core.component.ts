@@ -9,6 +9,8 @@ export class SheetsCoreComponent implements OnInit {
 
   @Input() row: number = 0;
   @Input() col: number = 0;
+
+  actionData:string = "";
  
   data: string[][] = [];
  
@@ -26,5 +28,13 @@ export class SheetsCoreComponent implements OnInit {
     getColmunWidths(): Object {
      
       return "100px 100px 100px 100px 100px 100px 100px 100px 100px 100px";
+    }
+
+    toolBarActions(action:string){
+      console.log("Action Recived")
+      if(action == "SAVE"){
+        console.log("Saving in progress...")
+        console.log(this.data)
+      }
     }
 }
