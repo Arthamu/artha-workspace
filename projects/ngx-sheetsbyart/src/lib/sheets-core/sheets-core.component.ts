@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
+import { SheetsUtilService } from '../service/sheets-util.service';
 
 @Component({
   selector: 'lib-sheets-core',
@@ -13,14 +14,18 @@ export class SheetsCoreComponent implements OnInit {
   actionData:string = "";
  
   data: string[][] = [];
+  coloumnNames = ["Test"];
+  sheetsUtilService: SheetsUtilService;
  
-  constructor() { }
+  constructor(sheetsUtilService:SheetsUtilService) {
+    this.sheetsUtilService = sheetsUtilService;
+   }
 
   ngOnInit(): void {
     for (var i = 0; i < this.row; i++) {
       this.data[i] = [];
       for (var j = 0; j < this.col; j++) {
-        this.data[i][j] = `${i},${j}`;
+        this.data[i][j] = "";
       }
       console.log(this.data);
     } }
@@ -33,8 +38,10 @@ export class SheetsCoreComponent implements OnInit {
     toolBarActions(action:string){
       console.log("Action Recived")
       if(action == "SAVE"){
-        console.log("Saving in progress...")
-        console.log(this.data)
+        console.log("Saving in progress...");
+        console.log(this.data);
+        let toJsonString:string =this.sheetsUtilService.sconvertToJson(this.data, this.coloumnNames);
+        alert(toJsonString);
       }
     }
 }

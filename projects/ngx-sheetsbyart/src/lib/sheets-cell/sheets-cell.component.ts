@@ -20,6 +20,4 @@ export class SheetsCellComponent implements OnInit {
     console.log(this.content);
     this.contentChange.emit(this.content);
   }
-
-
 }

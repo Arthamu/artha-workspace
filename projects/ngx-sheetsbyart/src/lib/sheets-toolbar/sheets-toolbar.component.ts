@@ -17,7 +17,6 @@ export class SheetsToolbarComponent implements OnInit {
   }
 
   actionSave(){
-    console.log("Save Action clicked")
-    this.toolBarAction.emit("SAVE");
+    this.toolBarAction.emit("SAVE")
   }
 }
