@@ -73,6 +73,7 @@
 					},
 					"configurations": {
 						"production": {
+							"baseHref": "/artha-workspace/",
 							"budgets": [
 								{
 									"type": "initial",
