@@ -34,6 +34,43 @@
 			"node": {
 				"enableDebugging": true
 			}
+		},
+		{
+			"type": "npm",
+			"script": "start",
+			"problemMatcher": [],
+			"label": "npm: start",
+			"detail": "ng serve demo"
+		},
+		{
+			"type": "nx",
+			"project": "",
+			"command": "run",
+			"positional": "demo:serve",
+			"flags": [],
+			"problemMatcher":  {
+				"owner": "typescript",
+				"source": "ts",
+				"applyTo": "closedDocuments",
+				"fileLocation": [
+				  "relative",
+				  "${cwd}"
+				],
+				"pattern": "$tsc",
+				"background": {
+				  "activeOnStart": true,
+				  "beginsPattern": {
+					"regexp": "(.*?)"
+				  },
+				  "endsPattern": {
+					/**
+					 *  this is the pattern when the task is finished
+					 */
+					"regexp": "Compiled |Failed to compile."
+				  }
+				}},
+			"label": "nx: nx run demo:serve",
+			"isBackground": true
 		}
 	]
 }

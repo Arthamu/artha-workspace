@@ -14,17 +14,17 @@ describe('SheetsUtilService', () => {
     expect(service).toBeTruthy();
   });
   it('should convert to json', () => {
-    expect(service.sconvertToJson([["testValue1"], ["testValue2"]], ["testKey"])).
+    expect(service.convertToJson([["testValue1"], ["testValue2"]], ["testKey"])).
     toBe(JSON.stringify([{ "testKey": "testValue1" }, { "testKey": "testValue2" }]));
 
   });
   it('should not convert undefined to json', () => {
-    expect(service.sconvertToJson([["testValue1"], ["testValue2"],[]], ["testKey"])).
+    expect(service.convertToJson([["testValue1"], ["testValue2"],[]], ["testKey"])).
     toBe(JSON.stringify([{ "testKey": "testValue1" }, { "testKey": "testValue2" }]));
 
   });
   it('should not convert empty string to json', () => {
-    expect(service.sconvertToJson([["testValue1"], ["testValue2"],[""]], ["testKey"])).
+    expect(service.convertToJson([["testValue1"], ["testValue2"],[""]], ["testKey"])).
     toBe(JSON.stringify([{ "testKey": "testValue1" }, { "testKey": "testValue2" }]));
 
   });

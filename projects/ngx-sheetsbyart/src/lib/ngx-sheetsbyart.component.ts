@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'lib-ngx-sheetsbyart',
   template: `
-    <lib-sheets-core [row]="100" [col]="100">
+    <lib-sheets-core [row]="row" [col]="col">
     </lib-sheets-core>
   `,
   styles: [
@@ -11,6 +11,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgxSheetsbyartComponent implements OnInit {
 
+  @Input() row: number=0;
+  @Input() col: number=0;
   constructor() { }
 
   ngOnInit(): void {

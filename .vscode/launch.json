@@ -1,42 +1,35 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        {
-            "name": "Launch index.html",
-            "type": "firefox",
-            "request": "launch",
-            "reAttach": true,
-            "file": "${workspaceFolder}/index.html"
-        },
-        {
-            "name": "Launch localhost",
-            "type": "firefox",
-            "request": "launch",
-            "reAttach": true,
-            "url": "http://localhost/index.html",
-            "webRoot": "${workspaceFolder}"
-        },
-        {
-            "name": "Attach",
-            "type": "firefox",
-            "request": "attach"
-        },
-        {
-            "name": "Launch WebExtension",
-            "type": "firefox",
-            "request": "launch",
-            "reAttach": true,
-            "addonPath": "${workspaceFolder}"
-        },
-        {
-            "name": "Docker Node.js Launch",
-            "type": "docker",
-            "request": "launch",
-            "preLaunchTask": "docker-run: debug",
-            "platform": "node"
-        }
+      {
+        "type": "firefox",
+        /**
+         * you can use custom profile in firefox
+         */
+       // "profile": "kryshac",
+        "request": "launch",
+        /**
+         * you can use the previous instance of firefox if is not closed
+         */
+        "reAttach": true,
+        "name": "Firefox",
+        "url": "http://localhost:4200",
+        /**
+         *  pathMappings is for mapping libraries to the correct path
+         */
+         "preLaunchTask": "nx: nx run demo:serve",
+         //"webRoot": "${workspaceFolder}",
+         "internalConsoleOptions": "openOnSessionStart",
+         "pathMappings": [{
+             "url": "webpack:///projects/ngx-sheetsbyart/src",
+             "path": "${workspaceFolder}/projects/ngx-sheetsbyart/src"
+           },
+           {
+            "url": "webpack:///projects/demo/src",
+            "path": "${workspaceFolder}/projects/demo/src"
+          }
+        ]
+    
+      }
     ]
-}
+  }

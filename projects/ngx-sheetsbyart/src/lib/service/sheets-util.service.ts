@@ -9,16 +9,15 @@ export class SheetsUtilService {
   
   constructor() { }
 
-  public sconvertToJson(data: string[][], coloumnNames: string[]): string {
+  public convertToJson(data: string[][], coloumnNames: string[]): string {
 
-    var request: any = [];
+    let request: any = [];
     data.forEach(row => {
-      var rows: any = {};
-      row.forEach((element, index: number) => {
-        if (coloumnNames[index] !== undefined && element !== "") {
-          rows[coloumnNames[index]] = element;
-        }
-      });
+      let rows: Map<string, string> = new Map<string, string>();
+
+      coloumnNames.forEach((element:string, index: number) =>{
+        rows.set(coloumnNames[index],row[index])
+      } );
       if (!this.isEmpty(rows)) {
         request.push(rows);
       }
@@ -34,5 +33,9 @@ export class SheetsUtilService {
       }
     }
     return true;
+  }
+
+public deepCopy(data : any): any{
+    return JSON.parse(JSON.stringify(data));
   }
 }

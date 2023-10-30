@@ -1,1 +1,10 @@
-<input type="textarea" [(ngModel)]="content" (change)="emitChange()" />
+
+<ng-container *ngIf="isDisabled; else elseTemplate">
+   <div class ="disbaledTextArea"  (click)="toggleCell()">{{content}}</div> 
+</ng-container>
+<ng-template #elseTemplate >
+    <input #firstNameField  type="textarea" [(ngModel)]="content" (change)="emitChange()" (focus)="focus"  (blur)="toggleCell()" />
+</ng-template>
+
+
+

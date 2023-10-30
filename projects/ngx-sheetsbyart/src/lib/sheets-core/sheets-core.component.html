@@ -1,9 +1,13 @@
 <lib-sheets-toolbar (toolBarAction) = "toolBarActions($event)"></lib-sheets-toolbar>
 <div class="sheets-container" [ngStyle]="{'grid-template-columns': getColmunWidths()}">
-   <ng-container *ngFor="let row of data; let i=index">
-        <ng-container  *ngFor="let col of row; let j=index">
-            <lib-sheets-cell [(content)] = this.data[i][j] ></lib-sheets-cell>
+   <ng-container *ngFor="let rowData of this.data; let i=index">
+        <ng-container  *ngFor="let colData of rowData; let j=index">
+            <lib-sheets-cell [content] = "colData"  (contentChange)='contentChange($event)' [row]="i" [col]="j" ></lib-sheets-cell>
         </ng-container> 
     </ng-container>
 
 </div>
+
+
+
+<textarea>{{ this.data | json }}</textarea>

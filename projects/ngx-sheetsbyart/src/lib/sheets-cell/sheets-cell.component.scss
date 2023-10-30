@@ -4,4 +4,20 @@ $primary-color: rgb(0, 0, 0);
 input{
   font: 100% $font-stack;
   color: $primary-color;
+  width: 100px;
+  :disabled {
+    pointer-events: all;
+  }
+}
+
+.disbaledTextArea{
+  width: 100px;
+  height: 24px;
+  font: 100% $font-stack;
+  color: $primary-color;
+  background-color: rgba(223, 212, 212, 0.582);
+  opacity: .5;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
 }
